@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Felices 4 Meses</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- PANTALLA 1: INICIO -->
+  <section id="inicio" class="pantalla">
+    <svg class="heart" viewBox="0 0 200 180" role="img" aria-label="Corazón con A+E">
+      <defs>
+        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#7c3aed"/>
+          <stop offset="1" stop-color="#22c55e"/>
+        </linearGradient>
+      </defs>
+      <path d="M100 168 C20 110 4 70 4 46 C4 22 24 6 48 6 C70 6 88 18 100 38 C112 18 130 6 152 6 C176 6 196 22 196 46 C196 70 180 110 100 168 Z" fill="url(#g)"/>
+      <text x="100" y="82" text-anchor="middle" dominant-baseline="middle">A+E</text>
+    </svg>
+    <p class="frase">Te amaré por siempre mi amor</p>
+    <button id="btnSigue" class="btn">Sigue</button>
+  </section>
+
+  <!-- PANTALLA 2: TEST -->
+  <section id="test" class="pantalla oculto">
+    <h2 class="pregunta">¿Recuerdas nuestro aniversario?</h2>
+
+    <div class="opciones">
+      <button class="btn opcion" data-correcta="false">a) 20/07/2026</button>
+      <button class="btn opcion" data-correcta="true">b) 10/06/2026</button>
+      <button class="btn opcion" data-correcta="false">c) 25/5/2026</button>
+    </div>
+
+    <p id="resultado" class="texto oculto"></p>
+    <button id="btnMensaje" class="btn oculto">Mensajito</button>
+    <p id="mensaje" class="texto mensaje oculto">
+      Gracias por los 4 meses juntos, te amo mi linda princesa, eres lo mejor que me ha pasado
+    </p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

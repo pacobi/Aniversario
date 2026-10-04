@@ -1,0 +1,146 @@
+:root {
+  --bg: #fdf8ff;
+  --text: #4c1d95;
+  --purple: #7c3aed;
+  --green: #22c55e;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #120a1f;
+    --text: #e9d5ff;
+    --purple: #a78bfa;
+    --green: #4ade80;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #120a1f;
+  --text: #e9d5ff;
+  --purple: #a78bfa;
+  --green: #4ade80;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.pantalla {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 480px;
+  width: 100%;
+}
+
+.oculto {
+  display: none !important;
+}
+
+/* Corazón */
+.heart {
+  width: min(70vw, 300px);
+  animation: latido 1.6s ease-in-out infinite;
+  filter: drop-shadow(0 8px 24px rgba(124, 58, 237, .35));
+}
+
+.heart text {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 34px;
+  fill: #fff;
+}
+
+@keyframes latido {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.08); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.06); }
+}
+
+/* Textos */
+.frase,
+.texto,
+.pregunta {
+  font-family: 'Dancing Script', cursive;
+  color: var(--text);
+  margin: 0;
+}
+
+.frase {
+  font-size: clamp(1.8rem, 7vw, 2.8rem);
+  opacity: 0;
+  animation: aparece 2s ease .6s forwards;
+}
+
+.pregunta {
+  font-size: clamp(2rem, 8vw, 3rem);
+  font-weight: 600;
+}
+
+.texto {
+  font-size: clamp(1.5rem, 6vw, 2.2rem);
+  animation: aparece 1s ease forwards;
+}
+
+.mensaje {
+  line-height: 1.4;
+}
+
+@keyframes aparece {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Botones */
+.btn {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--purple), var(--green));
+  border: none;
+  border-radius: 999px;
+  padding: .8rem 2rem;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(124, 58, 237, .3);
+  transition: transform .15s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn:active {
+  transform: scale(.97);
+}
+
+.opciones {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.opcion {
+  width: 100%;
+}
+
+.opcion.incorrecta {
+  background: #9ca3af;
+  box-shadow: none;
+}
